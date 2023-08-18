@@ -9,3 +9,6 @@ This repository contains the code for a basic website template with a responsive
 - Smooth scrolling to different sections of the page
 - Mobile-friendly design
 - Easily customizable and extensible
+### To be added
+• Enabled secure collection and storage of customer data in a database.  
+• Integrated WhatsApp messaging for efficient customer communication.
