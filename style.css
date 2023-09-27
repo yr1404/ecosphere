@@ -20,6 +20,10 @@ header {
     
 }
 
+section {
+    padding-block: 40px;
+}
+
 #logo {
     display: flex;
     align-items: center;
@@ -94,13 +98,18 @@ a {
     text-align: center;
 }
 
-h1 {
+#main-section-title {
     font-family: 'Lato', sans-serif;
     font-size: 32px;
     text-align: center;
 }
 
 .t2 {
+    display: inline;
+    position: relative;
+    left: 44.7%;
+    
+    
     font-family: 'Rubik', sans-serif;
     font-size: 30px;
     border-bottom: 3px solid blue;
@@ -108,6 +117,7 @@ h1 {
 
 .row1 {
     display: flex;
+    padding-top: 30px;
 }
 
 .col {
@@ -155,6 +165,19 @@ h3 {
 .col-test:hover {
     transform: scale(1.05);
     transition: 1s;
+}
+
+.contactContainer {
+    display: flex;
+}
+
+.contactContainer .col1 {
+    flex: 10%;
+    border-radius: 20px;
+    padding: 20px 0px;
+    margin: 50px;
+    margin-top: 10px;
+    text-align: center;
 }
 
 #foot {
