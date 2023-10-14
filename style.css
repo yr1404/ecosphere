@@ -161,7 +161,6 @@ h3 {
 }
 
 .col-test {
-    flex: 50%;
     background: #F2F2F2;
     margin: 40px;
     text-align: center;
@@ -177,23 +176,28 @@ h3 {
 
 .contactContainer {
     display: flex;
+    justify-content: center;
+    gap: 250px;
     flex-wrap: wrap;
 }
 
 .contactContainer .col1 {
-    flex: 10%;
-    /* border-radius: 20px; */
-    /* padding: 20px 0px; */
-    /* margin: 50px; */
     margin-top: 10px;
     text-align: center;
 }
 
-.contactContainer .col1 img {
-    max-width: 50%;
+.contactContainer .col2 {
+    display: flex;
+    text-align: left;
+    max-width:min-content;
+    align-items: center;
 }
 
-.contactContainer .col1 p {
+.contactContainer .col1 img {
+    width: 40em;
+}
+
+#contact-us p {
     font-size: 20px;
 }
 

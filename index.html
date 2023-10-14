@@ -22,7 +22,8 @@
 
             <div>
 
-                <img src="https://www.freepngimg.com/thumb/symbol/61606-logo-circle-brand-ibm-download-hd-png.png" alt="" width="100px">
+                <img src="https://www.freepngimg.com/thumb/symbol/61606-logo-circle-brand-ibm-download-hd-png.png"
+                    alt="" width="100px">
 
             </div>
 
@@ -135,23 +136,29 @@
 
     <section id="contact-us">
         <h1 class="t2">Get in Touch!</h2>
-        <div class="contactContainer">
-            <div class="col1">
-                <p>If you have any questions or inquiries, please feel free to get in touch with us.</p>
-                <img src="images/get-in-touch.jpg" alt="Get In Touch">
+            <p>If you have any questions or inquiries, please feel free to get in touch with us.</p>
+            <div class="contactContainer">
+                <div class="col1">
+                    <img src="images/get-in-touch.jpg" alt="Get In Touch">
+                </div>
+                <div class="col2">
+                    <form>
+                        <label for="name">Name: </label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email: </label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="phone">Phone: </label>
+                        <input type="tel" id="phone" name="phone">
+
+                        <label for="message">Message: </label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+
+                        <button type="submit" class="submit-button">Submit</button>
+                    </form>
+                </div>
             </div>
-            <div class="col1">
-                <form>
-                    <input type="text" id="name" name="name" placeholder="Name" required>
-
-                    <input type="email" id="email" name="email" placeholder="Email" required>
-
-                    <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
-
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-        </div>
 
     </section>
 
@@ -175,7 +182,7 @@
         const hamburger = document.querySelector('.bars');
         const navLink = document.querySelector('.navbar');
 
-        hamburger.onclick = function() {
+        hamburger.onclick = function () {
             navLink.classList.toggle("active");
         }
     </script>
