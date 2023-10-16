@@ -18,7 +18,7 @@ header {
     z-index: 1;
     display: flex;
     justify-content: space-between;
-    
+
 }
 
 section {
@@ -113,7 +113,7 @@ a {
 
 .t2 {
     display: inline;
-    
+
     font-family: 'Rubik', sans-serif;
     font-size: 30px;
     border-bottom: 3px solid blue;
@@ -135,7 +135,7 @@ a {
     text-align: center;
 }
 
-.col img{
+.col img {
     width: 60%;
 }
 
@@ -158,6 +158,7 @@ h3 {
 
 .row3 {
     display: flex;
+    justify-content: center;
 }
 
 .col-test {
@@ -189,12 +190,24 @@ h3 {
 .contactContainer .col2 {
     display: flex;
     text-align: left;
-    max-width:min-content;
+    max-width: min-content;
     align-items: center;
 }
 
+.contactContainer .col2 form input {
+    margin-bottom: 2em;
+    width: 30em;
+    height: 2em;
+}
+
+.contactContainer .col2 form textarea {
+    margin-bottom: 2em;
+    width: 30em;
+    height: 7em;
+}
+
 .contactContainer .col1 img {
-    width: 40em;
+    width: 30em;
 }
 
 #contact-us p {
@@ -232,15 +245,18 @@ h3 {
 }
 
 @media(max-width: 1240px) {
+
     .row,
     .row1,
     .row3 {
         flex-direction: column;
     }
+
     .ftr {
         flex-direction: column;
         text-align: center;
     }
+
     .col-foot-right {
         padding-block: 10px;
     }
