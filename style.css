@@ -177,37 +177,42 @@ h3 {
 
 .contactContainer {
     display: flex;
-    justify-content: center;
-    gap: 250px;
+    align-items: center;
+    max-width: 100vw;
     flex-wrap: wrap;
 }
 
 .contactContainer .col1 {
-    margin-top: 10px;
-    text-align: center;
+    flex: 50%;
+    text-align: right;
 }
 
 .contactContainer .col2 {
-    display: flex;
+    flex: 50%;
     text-align: left;
-    max-width: min-content;
+    display: flex;
+    justify-content: center;
     align-items: center;
+}
+
+.contactContainer .col2 form {
+    width: 40%;
 }
 
 .contactContainer .col2 form input {
     margin-bottom: 2em;
-    width: 30em;
+    width: 90%;
     height: 2em;
 }
 
 .contactContainer .col2 form textarea {
     margin-bottom: 2em;
-    width: 30em;
+    width: 90%;
     height: 7em;
 }
 
 .contactContainer .col1 img {
-    max-width: 30em;
+    width: 70%;
 }
 
 #contact-us p {
@@ -217,7 +222,6 @@ h3 {
 .contactContainer .submit-button {
     cursor: pointer;
     border: none;
-    align-self: center;
 }
 
 #foot {
@@ -304,5 +308,14 @@ h3 {
 
     .t2 {
         left: 35%;
+    }
+
+    .contactContainer {
+        flex-direction: column;
+    }
+
+    .contactContainer .col1 {
+        text-align: center;
+        padding-bottom: 50px;
     }
 }
