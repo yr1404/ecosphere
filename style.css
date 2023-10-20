@@ -1,9 +1,9 @@
 * {
     list-style: none;
+    overflow-x: clip;
 }
 
 body {
-    overflow-x: hidden;
     text-align: center;
 }
 
@@ -257,6 +257,10 @@ h3 {
 
 @media(max-width: 1240px) {
 
+    header{
+        padding-inline: 20px;
+    }
+
     .row,
     .row1,
     .row3 {
@@ -317,5 +321,14 @@ h3 {
     .contactContainer .col1 {
         text-align: center;
         padding-bottom: 50px;
+    }
+
+    .contactContainer .col2 form {
+        width: 70%;
+    }
+
+    .contactContainer .col2 form input,
+    .contactContainer .col2 form textarea {
+        width: 97.5%;
     }
 }
