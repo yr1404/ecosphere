@@ -14,7 +14,7 @@ header {
     top: 0;
     position: sticky;
     background-color: #F9F9FB;
-    z-index: 1;
+    z-index: 0;
     display: flex;
     justify-content: space-between;
 
@@ -22,6 +22,7 @@ header {
 
 section {
     padding-top: 40px;
+    z-index: 0;
     scroll-margin-top: 80px; /* This property avoids the navbar to cover headlines when nav links are clicked  */
 }
 
@@ -258,7 +259,8 @@ h3 {
 @media(max-width: 1240px) {
 
     header{
-        padding-inline: 20px;
+        padding-right: 20px;
+        padding-left: 5px;
     }
 
     .row,
@@ -269,9 +271,13 @@ h3 {
 
     .ftr {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
     }
 
+    .ftr .col-foot-left{
+        font-size: 80%;
+    }
+    
     .col-foot-right {
         padding-block: 10px;
     }
@@ -280,20 +286,25 @@ h3 {
         display: block;
         padding-top: 10px;
         cursor: pointer;
+        z-index: 100;
+    }
+
+    #logo{
+        z-index: 0;
     }
 
     header nav {
         margin: 0;
         position: absolute;
-        top: -350%;
-        left: 0;
+        left: 350%;
         width: 100%;
-        height: fit-content;
+        height: 100vh;
         background-color: #F9F9F9;
-        padding: 30px;
+        padding-top: 100px;
         transition: 0.5s;
         text-align: center;
-        z-index: -1;
+        padding: auto;
+        z-index: 1;
     }
 
     header nav ul {
@@ -303,7 +314,7 @@ h3 {
     }
 
     header nav.active {
-        top: 70px;
+        left: 0px;
     }
 
     #main .column1 {

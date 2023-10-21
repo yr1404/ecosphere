@@ -184,6 +184,14 @@
 
         hamburger.onclick = function () {
             navLink.classList.toggle("active");
+
+            const anchorTags = navLink.getElementsByTagName('a');
+
+            for (let i = 0; i < anchorTags.length; i++) {
+                anchorTags[i].onclick = function () {
+                    navLink.classList.toggle("active");
+                };
+            }
         }
     </script>
 
