@@ -195,42 +195,6 @@
         }
     </script>
 
-
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#contact-form").submit(function (e) {
-                e.preventDefault(); // Prevent the form from submitting via browser.
-
-                // Collect form data.
-                var name = $("#name").val();
-                var email = $("#email").val();
-                var phone = $("#phone").val();
-                var message = $("#message").val();
-
-                // Send the data to your PHP script for processing.
-                $.ajax({
-                    type: "POST",
-                    url: "send_whatsapp.php", // Create this PHP file.
-                    data: {
-                        name: name,
-                        email: email,
-                        phone: phone,
-                        message: message
-                    },
-                    success: function (response) {
-                        // Handle the response from the server (e.g., show a success message).
-                        alert("Message sent successfully!");
-                    },
-                    error: function (error) {
-                        // Handle errors (e.g., display an error message).
-                        alert("Message sending failed.");
-                    }
-                });
-            });
-        });
-    </script> -->
-
 </body>
 
 </html>
