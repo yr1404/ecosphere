@@ -14,16 +14,16 @@ header {
     top: 0;
     position: sticky;
     background-color: #F9F9FB;
-    z-index: 0;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
 
 }
 
 section {
-    padding-top: 40px;
+    height: 85vh;
     z-index: 0;
-    scroll-margin-top: 80px; /* This property avoids the navbar to cover headlines when nav links are clicked  */
+    scroll-margin-top: 18vh; /* This property avoids the navbar to cover headlines when nav links are clicked  */
 }
 
 #logo {
@@ -70,6 +70,7 @@ a {
     background: blue;
     border-radius: 8px;
     padding: 8px;
+    border-style: none;
 }
 
 .btn:hover {
@@ -77,38 +78,39 @@ a {
     color: #fff;
 }
 
-
-.row {
+#main {
+    height: 90vh;
     display: flex;
     align-items: center;
-    /* float: left; */
-    max-width: 100vw;
+}
+
+.row {
+    height: fit-content;
+    display: flex;
 }
 
 
 .column1 {
-    /* width: 50%; */
     flex: 50%;
-    text-align: center;
     font-size: 20px;
-    padding: 80px;
-    padding-top: 50px;
+    padding-left: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .column2 {
-    /* width: 50%; */
-    padding-top: 10px;
     flex: 50%;
-    text-align: center;
 }
 
 .column2 img {
-    width: 60%;
+    max-width: 70%;
+    min-width: 30em;
 }
 
 #main-section-title {
     font-family: 'Lato', sans-serif;
-    font-size: 32px;
+    font-size: 2em;
     text-align: center;
 }
 
@@ -176,44 +178,56 @@ h3 {
     transition: 1s;
 }
 
+#contact-us {
+    width: 100vw;
+}
+
 .contactContainer {
     display: flex;
     align-items: center;
-    max-width: 100vw;
-    flex-wrap: wrap;
+    width: 100%;
+    gap: 5em;
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
 }
 
 .contactContainer .col1 {
+    height: 100%;
     flex: 50%;
-    text-align: right;
+    display: flex;
+    justify-content: end;
+    /* align-items: center; */
+    /* padding-right: 50px; */
 }
 
 .contactContainer .col2 {
     flex: 50%;
     text-align: left;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    /* align-items: center; */
+    /* padding-left: 50px; */
 }
 
 .contactContainer .col2 form {
-    width: 40%;
+    width: 50%;
+    padding-inline: 1em ;
 }
 
 .contactContainer .col2 form input {
     margin-bottom: 2em;
-    width: 90%;
+    width: 100%;
     height: 2em;
 }
 
 .contactContainer .col2 form textarea {
     margin-bottom: 2em;
-    width: 90%;
+    width: 100%;
     height: 7em;
 }
 
 .contactContainer .col1 img {
-    width: 70%;
+    width: 50%;
 }
 
 #contact-us p {
@@ -222,11 +236,12 @@ h3 {
 
 .contactContainer .submit-button {
     cursor: pointer;
-    border: none;
+    display: flex;
+    justify-content: center;
 }
 
 #foot {
-    margin-top: 100px;
+    /* margin-top: 100px; */
     margin-bottom: 30px;
 }
 
@@ -258,15 +273,34 @@ h3 {
 
 @media(max-width: 1240px) {
 
+    section {
+        height: fit-content;
+        padding-block: 2em;
+        scroll-margin-top: 10vh;
+    }
+
     header{
         padding-right: 20px;
         padding-left: 5px;
+    }
+
+    #main {
+        height: fit-content;
     }
 
     .row,
     .row1,
     .row3 {
         flex-direction: column;
+    }
+
+    .column1 {
+        padding-inline: 1em;
+    }
+
+    .column2 img {
+        max-width: 70%;
+        min-width: 1em;
     }
 
     .ftr {
@@ -296,12 +330,12 @@ h3 {
     header nav {
         margin: 0;
         position: absolute;
-        left: 350%;
+        left: 110%;
         width: 100%;
         height: 100vh;
         background-color: #F9F9F9;
         padding-top: 100px;
-        transition: 0.5s;
+        transition: 1s;
         text-align: center;
         padding: auto;
         z-index: 1;
@@ -327,19 +361,26 @@ h3 {
 
     .contactContainer {
         flex-direction: column;
+        gap: 3em;
+    }
+
+    #contact-us p {
+        padding-inline: 2em;
     }
 
     .contactContainer .col1 {
-        text-align: center;
-        padding-bottom: 50px;
+        justify-content: center;
+    }
+
+    .contactContainer .col1 img {
+        width: 70%;
+    }
+    
+    .contactContainer .col2 {
+        justify-content: center;
     }
 
     .contactContainer .col2 form {
         width: 70%;
-    }
-
-    .contactContainer .col2 form input,
-    .contactContainer .col2 form textarea {
-        width: 97.5%;
     }
 }
