@@ -71,11 +71,14 @@
 
     </header>
 
+    <!-- Scroll to top button -->
+    <a href="#"><i class="fa-sharp fa-solid fa-circle-up fa-2xl scroll-to-top"></i></a>
+
     <section id="main">
 
         <div class="row">
             <div class="column1">
-                <h1 id="main-section-title">Become limitless in your marketing campaign</h1>
+                <h1 id="main-section-title">BECOME limitless in your marketing campaign</h1>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex natus eius ut alias maiores, aut quidem
                 fugiat ab fugit reprehenderit dolore maxime deleniti exercitationem recusandae eveniet nesciunt earum
                 vero culpa! Lorem, ipsum dolor sit amet consectetur
@@ -85,7 +88,10 @@
                 quo laborum provident voluptates in quam eos expedita optio adipisci exercitationem praesentium itaque
                 rem. Ipsum non magni maiores quibusdam dignissimos exercitationem aspernatur necessitatibus repudiandae
                 minus nihil eaque quidem nostrum
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ad, eligendi optio vitae dignissimos incidunt doloribus explicabo inventore dolor nesciunt vero voluptatibus. Deleniti voluptatibus laudantium harum itaque inventore ad totam reiciendis, pariatur illum id deserunt dolores eveniet corporis quibusdam iure similique enim?
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ad, eligendi optio vitae dignissimos
+                incidunt doloribus explicabo inventore dolor nesciunt vero voluptatibus. Deleniti voluptatibus
+                laudantium harum itaque inventore ad totam reiciendis, pariatur illum id deserunt dolores eveniet
+                corporis quibusdam iure similique enim?
             </div>
             <div class="column2">
                 <img src="images/main.jpg" alt="#Image Not Found">
@@ -175,11 +181,11 @@
                 <a href="javascript:void(0)"><i class="fa-brands fa-twitter"></i></a>
                 <a href="javascript:void(0)"><i class="fa-brands fa-instagram"></i></a>
                 <a href="javascript:void(0)"><i class="fa-brands fa-whatsapp"></i></a>
-                <!-- <a href="#top"><i class="fa-sharp fa-solid fa-circle-up"></i></a> -->
             </div>
 
         </div>
     </footer>
+
 
     <script>
         const hamburger = document.querySelector('.bars');
@@ -196,6 +202,19 @@
                 };
             }
         }
+
+        //Scroll to top button visibility changes with scrolling
+        const scrollToTopButton = document.getElementsByClassName("scroll-to-top")[0];
+        const mainSection = document.getElementById("main");
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > mainSection.offsetHeight) {
+                scrollToTopButton.style.visibility = "visible";
+            } else {
+                scrollToTopButton.style.visibility = "hidden";
+            }
+        });
+
     </script>
 
 </body>

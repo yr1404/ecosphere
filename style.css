@@ -271,6 +271,14 @@ h3 {
     color: #393E46;
 }
 
+.scroll-to-top {
+    position: fixed;
+    color: #393E46;
+	bottom:120px;
+	right:20px;
+    visibility: hidden;
+}
+
 @media(max-width: 1240px) {
 
     section {
@@ -382,5 +390,9 @@ h3 {
 
     .contactContainer .col2 form {
         width: 70%;
+    }
+
+    .scroll-to-top {
+        bottom: 4em;
     }
 }
