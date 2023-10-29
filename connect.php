@@ -24,7 +24,7 @@
     use Twilio\Rest\Client;
 
     $accountSid = 'AC97c4672417c53b9a2fbf795ec993d65c';
-    $authToken = '81c9f18ed1643eb51cfd2deb8b6ea68a';
+    $authToken = '14712da20482a837bcf0cf76b2fe2544';
 
     $client = new Client($accountSid, $authToken);
 

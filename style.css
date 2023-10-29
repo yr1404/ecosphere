@@ -8,27 +8,33 @@ body {
 }
 
 header {
-    padding: 10px 50px;
     font-family: sans-serif;
     box-shadow: 0px 4px 3px -1px rgba(0, 0, 0, 0.2);
     top: 0;
-    position: sticky;
-    background-color: #F9F9FB;
+    position: fixed;
+    background-color: aliceblue;
     z-index: 1;
     display: flex;
     justify-content: space-between;
-
+    width: 100%;
 }
 
 section {
-    height: 85vh;
+    box-sizing: border-box;
+    height: 91vh;
     z-index: 0;
-    scroll-margin-top: 18vh; /* This property avoids the navbar to cover headlines when nav links are clicked  */
+    padding-top: 2em;
+    scroll-margin-top: 9vh; /* This property avoids the navbar to cover headlines when nav links are clicked  */
 }
 
 #logo {
     display: flex;
-    align-items: center;
+    align-items:center;
+    padding-left: 2em;
+}
+
+#logo img {
+    margin-top: 0.5em;
 }
 
 .com {
@@ -37,11 +43,17 @@ section {
 
 .bars {
     display: none;
+    padding-right: 1em;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding-right: 2.5em;
 }
 
 .navbar ul {
     display: flex;
-    padding-top: 10px;
 }
 
 .navbar ul li {
@@ -79,7 +91,7 @@ a {
 }
 
 #main {
-    height: 90vh;
+    height: 100vh;
     display: flex;
     align-items: center;
 }
@@ -122,6 +134,10 @@ a {
     border-bottom: 3px solid blue;
 }
 
+#about {
+    background-color: #d8dfe5;
+}
+
 .row1 {
     display: flex;
     padding-top: 30px;
@@ -155,10 +171,6 @@ h3 {
     z-index: 0;
 }
 
-.test {
-    margin-top: 50px;
-}
-
 .row3 {
     display: flex;
     justify-content: center;
@@ -180,6 +192,8 @@ h3 {
 
 #contact-us {
     width: 100vw;
+    background-color: #d8dfe5;
+
 }
 
 .contactContainer {
@@ -187,8 +201,6 @@ h3 {
     align-items: center;
     width: 100%;
     gap: 5em;
-    /* flex-direction: column; */
-    /* flex-wrap: wrap; */
 }
 
 .contactContainer .col1 {
@@ -277,6 +289,11 @@ h3 {
 	bottom:120px;
 	right:20px;
     visibility: hidden;
+    transition: ease-in-out;
+}
+
+.sub-text{
+    color: #4F3668;
 }
 
 @media(max-width: 1240px) {
@@ -287,13 +304,19 @@ h3 {
         scroll-margin-top: 10vh;
     }
 
-    header{
-        padding-right: 20px;
-        padding-left: 5px;
+    #logo {
+        padding-left: 0.5em;
+    }
+
+    .navbar {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
     }
 
     #main {
         height: fit-content;
+        padding-top: 12vh;
     }
 
     .row,
