@@ -1,6 +1,7 @@
 * {
     list-style: none;
     overflow-x: clip;
+    scroll-behavior: smooth;
 }
 
 body {
