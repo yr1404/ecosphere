@@ -136,7 +136,8 @@ a {
 }
 
 #about {
-    background-color: #d8dfe5;
+    /* background-color: #d8dfe5; */
+    background: url("images/white-paper-texture.jpg");
 }
 
 .row1 {
@@ -165,7 +166,7 @@ a {
     transform: translateY(-10px);
     transition-duration: 0.3s;
     z-index: 0;
-    background-color: #1111;
+    background: #d8dfe5;
     box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.8);
 }
 
