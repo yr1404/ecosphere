@@ -110,6 +110,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow-x: visible;
 }
 
 .column2 {
@@ -125,11 +126,12 @@ a {
     font-family: 'Lato', sans-serif;
     font-size: 2em;
     text-align: center;
+    overflow-x: visible;
 }
 
 .t2 {
     display: inline;
-
+    
     font-family: 'Rubik', sans-serif;
     font-size: 30px;
     border-bottom: 3px solid blue;
@@ -306,8 +308,11 @@ h3 {
     transition: ease-in-out;
 }
 
-.sub-text{
+#sub-text{
+    display: inline-block;
     color: #4F3668;
+    cursor: pointer;
+    z-index: 2;
 }
 
 @media(max-width: 1240px) {

@@ -12,9 +12,12 @@
         href="https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Open+Sans&family=Poppins:ital,wght@0,400;1,100&family=Raleway:ital,wght@1,400&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/1fae707202.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
 </head>
 
 <body>
+    <!-- onload="drag('sub-text')" -->
     <header>
 
 
@@ -78,7 +81,9 @@
 
         <div class="row">
             <div class="column1">
-                <h1 id="main-section-title">Become <span class="sub-text" ondrag="">LIMITLESS</span> in your marketing campaign</h1>
+                <h1 id="main-section-title">Become <span id="sub-text" ondrag="">
+                        <pre>LIMITLESS</pre>
+                    </span> in your marketing campaign</h1>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex natus eius ut alias maiores, aut quidem
                 fugiat ab fugit reprehenderit dolore maxime deleniti exercitationem recusandae eveniet nesciunt earum
                 vero culpa! Lorem, ipsum dolor sit amet consectetur
@@ -172,9 +177,9 @@
     </section>
 
     <footer id="foot">
-        <hr />
+        <!-- <hr /> -->
         <div class="ftr">
-            <div class="col-foot-left"> 2023 | © Copyrights and All rights reserved EcoSphere Ltd</div>
+            <div class="col-foot-left"> 2023 | © Copyrights and All rights reserved </div>
 
             <div class="col-foot-right">
                 <a href="javascript:void(0)"><i class="fa-brands fa-facebook"></i></a>
@@ -213,6 +218,31 @@
             } else {
                 scrollToTopButton.style.visibility = "hidden";
             }
+        });
+
+
+
+        // Drag fubction for sub-text
+
+        // var dragValue;
+
+        // function drag(id) {
+        //     var elem = document.getElementById("sub-text");
+        //     elem.style.position = "absolute";
+        //     elem.onmousedown = function() {
+        //         dragValue = elem;
+        //     }
+        // }
+        // document.onmousemove = function (e) {
+        //     let x = e.pageX;
+        //     let y = e.pageY;
+
+        //     dragValue.style.left = x + "px";
+        //     dragValue.style.top = y + "px";
+        // }
+
+        $(function () {
+            $("#sub-text").draggable();
         });
 
     </script>
