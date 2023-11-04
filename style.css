@@ -209,7 +209,6 @@ h3 {
 #contact-us {
     width: 100vw;
     background-color: #d8dfe5;
-
 }
 
 .contactContainer {
@@ -270,11 +269,12 @@ h3 {
 
 #foot {
     /* margin-top: 100px; */
-    margin-bottom: 30px;
+    padding-bottom: 30px;
+    background-color: #393939;
 }
 
 .ftr {
-    color: #393E46;
+    color: #f1f1f1;
     font-family: 'Lato', sans-serif;
     display: flex;
     padding-top: 1em;
@@ -292,11 +292,15 @@ h3 {
 
 .fa-brands {
     padding-inline: 5px;
+    color: #fff;
+    transition: 0.1s;
 }
 
 .fa-brands:hover {
-    transform: translateY(-2px);
-    color: #393E46;
+    /* transform: translateY(-2px); */
+    transform: scale(1.6);
+    transition: 0.1s;
+    /* color: ; */
 }
 
 .scroll-to-top {
@@ -304,6 +308,7 @@ h3 {
     color: #393E46;
 	bottom:120px;
 	right:20px;
+    padding: 0.1em;
     visibility: hidden;
     transition: ease-in-out;
 }
@@ -313,9 +318,25 @@ h3 {
     color: #4F3668;
     cursor: pointer;
     z-index: 2;
+    height: fit-content;
+
 }
 
-@media(max-width: 1240px) {
+@media screen and (max-height: 850px) {
+    section{
+        height: fit-content;
+    }
+
+    .column2 img {
+        width: 40%;
+    }
+
+    #about .col {
+        overflow-y: scroll;
+    }
+}
+    
+@media screen and (max-width: 1240px) {
 
     section {
         height: fit-content;
