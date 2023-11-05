@@ -82,7 +82,7 @@
         <div class="row">
             <div class="column1">
                 <h1 id="main-section-title">Become <span id="sub-text" ondrag="">
-                        <pre>LIMITLESS</pre>
+                        LIMITLESS
                     </span> in your marketing campaign</h1>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex natus eius ut alias maiores, aut quidem
                 fugiat ab fugit reprehenderit dolore maxime deleniti exercitationem recusandae eveniet nesciunt earum
@@ -210,13 +210,13 @@
 
         //Scroll to top button visibility changes with scrolling
         const scrollToTopButton = document.getElementsByClassName("scroll-to-top")[0];
-        const mainSection = document.getElementById("main");
+        const serviceSection = document.getElementById("about");
 
         window.addEventListener("scroll", () => {
-            if (window.pageYOffset > mainSection.offsetHeight) {
-                scrollToTopButton.style.visibility = "visible";
+            if (window.pageYOffset > 200) {
+                scrollToTopButton.style.scale = "1";
             } else {
-                scrollToTopButton.style.visibility = "hidden";
+                scrollToTopButton.style.scale = "0";
             }
         });
 
