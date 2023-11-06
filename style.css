@@ -322,6 +322,39 @@ h3 {
     height: 50px;
 }
 
+.testimonial-slider {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.testimonial-slider .review {
+    border: 2px solid black;
+    width: 20em;
+    height: 25em;
+    background-color: #78CF61;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; */
+}
+
+.review .rev-pfp {
+    padding-top: 2em;
+}
+
+.review .rev-pfp img {
+    width: 15em;
+    border-radius: 50%;
+}
+
+.review .rev-name {
+    font-size: 50px;
+}
+
+.review .rev-stars {
+    padding-top: 1.6em;
+}
+
 @media screen and (max-height: 850px) {
     section{
         height: fit-content;
