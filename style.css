@@ -325,7 +325,9 @@ h3 {
 .testimonial-slider {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    gap: 25px;
+    overflow-x: scroll;
+    /* scroll-behavior: smooth; */
 }
 
 .testimonial-slider .review {
@@ -333,18 +335,16 @@ h3 {
     width: 20em;
     height: 25em;
     background-color: #78CF61;
-    /* display: flex;
+    display: flex;
     flex-direction: column;
-    justify-content: space-evenly; */
-}
-
-.review .rev-pfp {
-    padding-top: 2em;
+    justify-content: center;
+    overflow: visible;
 }
 
 .review .rev-pfp img {
     width: 15em;
     border-radius: 50%;
+    margin-inline: 2em;
 }
 
 .review .rev-name {
@@ -352,8 +352,11 @@ h3 {
 }
 
 .review .rev-stars {
-    padding-top: 1.6em;
+    display: flex;
+    padding-top: 1em;
+    justify-content: center;
 }
+
 
 @media screen and (max-height: 850px) {
     section{

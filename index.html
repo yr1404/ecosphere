@@ -144,20 +144,123 @@
             </div>
         </div>
 
-            <div class="testimonial-slider">
-                <div class="review">
-                    <div class="rev-pfp">
-                        <img src="/images/reviewers/1.jpg" alt="Abhay">
-                    </div>
-                    <div class="rev-name">
-                        Abhay
-                    </div>
-                    <div class="rev-stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half"></i>
-                    </div>
+        <div class="testimonial-slider">
+            <div class="review">
+                <div class="rev-pfp">
+                    <img src="/images/reviewers/1.jpg" alt="Abhay">
+                </div>
+                <div class="rev-name">
+                    Abhay
+                </div>
+                <div class="rev-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half"></i>
                 </div>
             </div>
+            <div class="review">
+                <div class="rev-pfp">
+                    <img src="/images/reviewers/2.jpg" alt="Inaya">
+                </div>
+                <div class="rev-name">
+                    Inaya
+                </div>
+                <div class="rev-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half"></i>
+                </div>
+            </div>
+            <div class="review">
+                <div class="rev-pfp">
+                    <img src="/images/reviewers/3.jpg" alt="Gaurav">
+                </div>
+                <div class="rev-name">
+                    Gaurav
+                </div>
+                <div class="rev-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="review">
+                <div class="rev-pfp">
+                    <img src="/images/reviewers/4.jpg" alt="Simran">
+                </div>
+                <div class="rev-name">
+                    Simran
+                </div>
+                <div class="rev-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half"></i>
+                </div>
+            </div>
+            <div class="review">
+                <div class="rev-pfp">
+                    <img src="/images/reviewers/5.jpg" alt="Atiya">
+                </div>
+                <div class="rev-name">
+                    Atiya
+                </div>
+                <div class="rev-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="review">
+                <div class="rev-pfp">
+                    <img src="/images/reviewers/6.jpg" alt="Ibrahim">
+                </div>
+                <div class="rev-name">
+                    Ibrahim
+                </div>
+                <div class="rev-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half"></i>
+                </div>
+            </div>
+            <div class="review">
+                <div class="rev-pfp">
+                    <img src="/images/reviewers/7.jpg" alt="Ravindra">
+                </div>
+                <div class="rev-name">
+                    Ravindra
+                </div>
+                <div class="rev-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="review">
+                <div class="rev-pfp">
+                    <img src="/images/reviewers/8.jpg" alt="Sam">
+                </div>
+                <div class="rev-name">
+                    Sam
+                </div>
+                <div class="rev-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half"></i>
+                </div>
+            </div>
+        </div>
 
     </section>
 
@@ -261,6 +364,46 @@
                 revert: true
             });
         });
+
+
+        // Testimonial slider
+
+        // setInterval(function removeLastElement() {
+        //     var reviews = document.getElementsByClassName('testimonial-slider')[0];
+        //     var firstElement = document.getElementsByClassName('review')[0]
+        //     reviews.scrollBy(400,0)
+        //     setTimeout(1000)
+        //     reviews.appendChild(firstElement)
+        //     reviews.removeChild(firstElement)
+        // }, 2000);
+
+        var revCount = 0;
+        setInterval(function () {
+            var reviews = document.getElementsByClassName('testimonial-slider')[0];
+            var firstElement = document.getElementsByClassName('review')[revCount];
+
+            // Clone the first element
+            var cloneElement = firstElement.cloneNode(true);
+
+            // Scroll the slider to the left (scrolling effect)
+            reviews.scrollBy(400, 0);
+
+
+            // Delay the removal of the first element
+            setTimeout(function () {
+                // Remove the first element
+                // reviews.removeChild(firstElement);
+
+                // Add the cloned element at the end to create a seamless loop
+                reviews.appendChild(cloneElement);
+
+                // Reset the scroll position to avoid scrolling out of view
+                // reviews.scrollLeft = 0;
+            }, 2000); // Adjust the delay timing as needed
+            revCount++
+        }, 3000); // Repeat the process every 2 seconds
+
+
 
     </script>
 
