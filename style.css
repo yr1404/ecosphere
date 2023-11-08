@@ -25,12 +25,13 @@ section {
     height: 91vh;
     z-index: 0;
     padding-top: 2em;
-    scroll-margin-top: 9vh; /* This property avoids the navbar to cover headlines when nav links are clicked  */
+    scroll-margin-top: 9vh;
+    /* This property avoids the navbar to cover headlines when nav links are clicked  */
 }
 
 #logo {
     display: flex;
-    align-items:center;
+    align-items: center;
     padding-left: 2em;
 }
 
@@ -131,7 +132,7 @@ a {
 
 .t2 {
     display: inline;
-    
+
     font-family: 'Rubik', sans-serif;
     font-size: 30px;
     border-bottom: 3px solid blue;
@@ -238,7 +239,7 @@ h3 {
 
 .contactContainer .col2 form {
     width: 50%;
-    padding-inline: 1em ;
+    padding-inline: 1em;
 }
 
 .contactContainer .col2 form input {
@@ -306,15 +307,15 @@ h3 {
 .scroll-to-top {
     position: fixed;
     color: #393E46;
-	bottom:120px;
-	right:20px;
+    bottom: 120px;
+    right: 20px;
     padding: 0.1em;
     scale: 0;
     transition: all 0.1s;
     z-index: 1;
 }
 
-#sub-text{
+#sub-text {
     display: inline-block;
     color: #4F3668;
     cursor: pointer;
@@ -327,7 +328,20 @@ h3 {
     align-items: center;
     gap: 25px;
     overflow-x: scroll;
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.testimonial-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.testimonial-slider {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .testimonial-slider .review {
@@ -359,7 +373,7 @@ h3 {
 
 
 @media screen and (max-height: 850px) {
-    section{
+    section {
         height: fit-content;
     }
 
@@ -371,7 +385,7 @@ h3 {
         overflow-y: scroll;
     }
 }
-    
+
 @media screen and (max-width: 1240px) {
 
     section {
@@ -419,10 +433,10 @@ h3 {
         align-items: center;
     }
 
-    .ftr .col-foot-left{
+    .ftr .col-foot-left {
         font-size: 80%;
     }
-    
+
     .col-foot-right {
         padding-block: 10px;
     }
@@ -482,7 +496,7 @@ h3 {
     .contactContainer .col1 img {
         width: 70%;
     }
-    
+
     .contactContainer .col2 {
         justify-content: center;
     }
