@@ -377,32 +377,35 @@
         //     reviews.removeChild(firstElement)
         // }, 2000);
 
-        var revCount = 0;
-        setInterval(function () {
-            var reviews = document.getElementsByClassName('testimonial-slider')[0];
-            var firstElement = document.getElementsByClassName('review')[revCount];
+        const reviewsContainer = document.querySelector('.testimonial-slider');
+        const reviews = document.querySelectorAll('.review');
 
-            // Clone the first element
-            var cloneElement = firstElement.cloneNode(true);
+        // Duplicate the reviews for the infinite sliding effect
+        reviews.forEach((review) => {
+            const clone = review.cloneNode(true);
+            reviewsContainer.appendChild(clone);
+        });
 
-            // Scroll the slider to the left (scrolling effect)
-            reviews.scrollBy(400, 0);
+        // Set the width of the reviews container to accommodate all reviews
+        reviewsContainer.style.width = `${reviews.length * 100}%`;
 
+        let currentIndex = 0;
 
-            // Delay the removal of the first element
-            setTimeout(function () {
-                // Remove the first element
-                // reviews.removeChild(firstElement);
+        function nextReview() {
+            currentIndex++;
+            if (currentIndex < reviews.length) {
+                // Move to the next review
+                const reviewWidth = reviews[currentIndex].offsetWidth + 20; // considering margin
+                reviewsContainer.style.transform = `translateX(-${reviewWidth * currentIndex}px)`;
+            } else {
+                // Move back to the first review
+                currentIndex = 0;
+                reviewsContainer.style.transform = 'translateX(0)';
+            }
+        }
 
-                // Add the cloned element at the end to create a seamless loop
-                reviews.appendChild(cloneElement);
-
-                // Reset the scroll position to avoid scrolling out of view
-                // reviews.scrollLeft = 0;
-            }, 2000); // Adjust the delay timing as needed
-            revCount++
-        }, 3000); // Repeat the process every 2 seconds
-
+        // Automatically move to the next review in a fixed interval
+        setInterval(nextReview, 3000);
 
 
     </script>

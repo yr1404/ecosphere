@@ -327,8 +327,9 @@ h3 {
     display: flex;
     align-items: center;
     gap: 25px;
-    overflow-x: scroll;
+    overflow-x: visible;
     scroll-behavior: smooth;
+    transition: transform 0.5s;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
