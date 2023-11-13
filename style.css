@@ -320,7 +320,7 @@ h3 {
     color: #4F3668;
     cursor: pointer;
     z-index: 2;
-    height: 50px;
+    height: 40px;
 }
 
 .testimonial-slider {
@@ -329,7 +329,7 @@ h3 {
     gap: 25px;
     overflow-x: visible;
     scroll-behavior: smooth;
-    transition: transform 0.5s;
+    transition: transform 0.5s ease-in-out;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -512,5 +512,10 @@ h3 {
 
     #sub-text {
         z-index: 0;
+    }
+
+    .testimonial-slider .review {
+        width: 90vw;
+        align-items: center;
     }
 }

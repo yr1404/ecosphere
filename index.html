@@ -380,13 +380,13 @@
         const reviewsContainer = document.querySelector('.testimonial-slider');
         const reviews = document.querySelectorAll('.review');
 
-        // Duplicate the reviews for the infinite sliding effect
+        // Duplicates the reviews for the infinite sliding effect
         reviews.forEach((review) => {
             const clone = review.cloneNode(true);
             reviewsContainer.appendChild(clone);
         });
 
-        // Set the width of the reviews container to accommodate all reviews
+        // Sets the width of the reviews container to accommodate all reviews
         reviewsContainer.style.width = `${reviews.length * 100}%`;
 
         let currentIndex = 0;
