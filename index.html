@@ -147,7 +147,7 @@
         <div class="testimonial-slider">
             <div class="review">
                 <div class="rev-pfp">
-                    <img src="/images/reviewers/1.jpg" alt="Abhay">
+                    <img src="./images/reviewers/1.jpg" alt="Abhay">
                 </div>
                 <div class="rev-name">
                     Abhay
@@ -162,7 +162,7 @@
             </div>
             <div class="review">
                 <div class="rev-pfp">
-                    <img src="/images/reviewers/2.jpg" alt="Inaya">
+                    <img src="./images/reviewers/2.jpg" alt="Inaya">
                 </div>
                 <div class="rev-name">
                     Inaya
@@ -176,7 +176,7 @@
             </div>
             <div class="review">
                 <div class="rev-pfp">
-                    <img src="/images/reviewers/3.jpg" alt="Gaurav">
+                    <img src="./images/reviewers/3.jpg" alt="Gaurav">
                 </div>
                 <div class="rev-name">
                     Gaurav
@@ -190,7 +190,7 @@
             </div>
             <div class="review">
                 <div class="rev-pfp">
-                    <img src="/images/reviewers/4.jpg" alt="Simran">
+                    <img src="./images/reviewers/4.jpg" alt="Simran">
                 </div>
                 <div class="rev-name">
                     Simran
@@ -205,7 +205,7 @@
             </div>
             <div class="review">
                 <div class="rev-pfp">
-                    <img src="/images/reviewers/5.jpg" alt="Atiya">
+                    <img src="./images/reviewers/5.jpg" alt="Atiya">
                 </div>
                 <div class="rev-name">
                     Atiya
@@ -219,7 +219,7 @@
             </div>
             <div class="review">
                 <div class="rev-pfp">
-                    <img src="/images/reviewers/6.jpg" alt="Ibrahim">
+                    <img src="./images/reviewers/6.jpg" alt="Ibrahim">
                 </div>
                 <div class="rev-name">
                     Ibrahim
@@ -233,7 +233,7 @@
             </div>
             <div class="review">
                 <div class="rev-pfp">
-                    <img src="/images/reviewers/7.jpg" alt="Ravindra">
+                    <img src="./images/reviewers/7.jpg" alt="Ravindra">
                 </div>
                 <div class="rev-name">
                     Ravindra
@@ -247,7 +247,7 @@
             </div>
             <div class="review">
                 <div class="rev-pfp">
-                    <img src="/images/reviewers/8.jpg" alt="Sam">
+                    <img src="./images/reviewers/8.jpg" alt="Sam">
                 </div>
                 <div class="rev-name">
                     Sam
@@ -331,9 +331,18 @@
         const serviceSection = document.getElementById("about");
 
         window.addEventListener("scroll", () => {
-            if (window.pageYOffset > 200) {
+            if (window.innerWidth < 1240) {
+                if (window.pageYOffset > 375) {
+                    scrollToTopButton.style.scale = "1";
+                }
+                else {
+                    scrollToTopButton.style.scale = "0";
+                }
+            }
+            else if (window.pageYOffset > 200) {
                 scrollToTopButton.style.scale = "1";
-            } else {
+            }
+            else {
                 scrollToTopButton.style.scale = "0";
             }
         });
