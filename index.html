@@ -265,6 +265,7 @@
     </section>
 
     <section id="contact-us">
+        <div class='cursor' id="cursor"></div>
         <h1 class="t2">Get in Touch!</h2>
             <p>If you have any questions or inquiries, please feel free to get in touch with us.</p>
             <div class="contactContainer">
@@ -415,6 +416,16 @@
 
         // Automatically move to the next review in a fixed interval
         setInterval(nextReview, 3000);
+
+
+        //circle following cursor
+        const contact = document.getElementById("contact-us");
+        var cursor = document.getElementById("cursor");
+        contact.addEventListener("mousemove", function (e) {
+            cursor.style.left = e.clientX + "px",
+                cursor.style.top = e.clientY + "px";
+        });
+
 
 
     </script>
