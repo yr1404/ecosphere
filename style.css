@@ -365,7 +365,7 @@ h3 {
     transform: translateX(-50%) translateY(-50%);
     pointer-events: none;
     top: 50%;
-    opacity: 0.5;
+    opacity: 0;
     background-color: #0087ca7d;
     height: 100px;
     width: 100px;
