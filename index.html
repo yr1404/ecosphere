@@ -333,7 +333,7 @@
 
         window.addEventListener("scroll", () => {
             if (window.innerWidth < 1240) {
-                if (window.pageYOffset > 375) {
+                if (window.pageYOffset > 675) {
                     scrollToTopButton.style.scale = "1";
                 }
                 else {
@@ -419,12 +419,24 @@
 
 
         //circle following cursor
+
         const contact = document.getElementById("contact-us");
         var cursor = document.getElementById("cursor");
-        contact.addEventListener("mousemove", function (e) {
-            cursor.style.left = e.clientX + "px",
-                cursor.style.top = e.clientY + "px";
+
+        contact.addEventListener('mouseenter', () => {
+            cursor.style.opacity = 1;
         });
+
+        contact.addEventListener('mouseleave', () => {
+            cursor.style.opacity = 0;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+
+            cursor.style.transform = `translate(${x - 58}px, ${y - 485}px)`;
+        })
 
 
 

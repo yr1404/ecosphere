@@ -364,14 +364,11 @@ h3 {
     border-radius: 50%;
     transform: translateX(-50%) translateY(-50%);
     pointer-events: none;
-    left: -100px;
     top: 50%;
-    mix-blend-mode: difference; 
-    background-color: transparent;
-    z-index: 10000;
-    border: 2px solid white;
-    height: 30px;
-    width: 30px;
+    opacity: 0.5;
+    background-color: #0087ca7d;
+    height: 100px;
+    width: 100px;
     transition: all 300ms ease-out;
   }
 
@@ -387,6 +384,10 @@ h3 {
 
     #about .col {
         overflow-y: scroll;
+    }
+
+    .cursor {
+        visibility: hidden;
     }
 }
 
@@ -518,7 +519,10 @@ h3 {
     }
 
     .testimonial-slider .review {
-        width: 90vw;
-        align-items: center;
+        width: 90%;
+    }
+
+    .cursor {
+        visibility: hidden;
     }
 }
