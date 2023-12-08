@@ -286,14 +286,16 @@
                         <label for="message">Message: </label>
                         <textarea id="message" name="message" rows="4" required></textarea>
 
-                        <label for="wa-message">
-                            <input type="checkbox" name="wa-message" id="wa-message">Receive answers on WhatsApp (check if preferred)
-                        </label>
-
-                        <label for="recv-email">
-                            <input type="checkbox" name="recv-email" id="recv-email"> Receive Email 
-                        </label>
-
+                        <div id="checkbox">
+                            <label for="wa-message" id="wa-message">
+                                <input type="checkbox" name="wa-message">Receive answers on WhatsApp (check if preferred)
+                            </label>
+                            
+                            <label for="recv-email" id="recv-email">
+                                <input type="checkbox" name="recv-email"> Receive Email 
+                            </label>
+                        </div>
+                            
                         <div class="submit-button">
                             <button type="submit" class="btn">Submit</button>
                         </div>
