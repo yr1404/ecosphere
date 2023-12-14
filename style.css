@@ -271,32 +271,25 @@ h3 {
 
 #checkbox {
     display: flex;
-    align-items:flex-start;
-    justify-content: center;
     flex-direction: column;
+    align-items: flex-start; 
 }
 
-#checkbox #wa-message {
-    display: flex;
-    width: 100%;
+#wa-message, #recv-email {
     height: 50px;
-}
-#checkbox #wa-message input{
-    /* flex: 75px; */
-    width: 75px;
-}
-
-#checkbox #recv-email {
-    padding-top: 20px;
     display: flex;
-    width: 200px;
-    height: 50px;
+    align-items: center;
+    height: fit-content;
 }
 
-#checkbox #recv-email input{
-    /* flex: 75px; */
-    width: 70px;
+#wa-message div,
+#recv-email div {
+    width: 30px;
+    height: 50px; 
+    padding-right: 10px;
+    flex-shrink: 0; /* To avoid shrinking with screen size*/
 }
+
 
 #foot {
     /* margin-top: 100px; */
@@ -556,7 +549,4 @@ h3 {
         visibility: hidden;
     }
 
-    #recv-email {
-        padding-top: 20px;
-    }
 }
