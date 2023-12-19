@@ -1,5 +1,5 @@
 const hamburger = document.querySelector('.bars');
-console.log(hamburger);
+// console.log(hamburger);
 const navLink = document.querySelector('.navbar');
 
 hamburger.onclick = function () {
@@ -126,3 +126,25 @@ document.addEventListener('mousemove', (e) => {
 })
 
 
+// Displaying sandbox connection notification onclick of the checkbox
+
+const checkb = document.getElementById("wa-checkbox")
+var newDiv = document.createElement('div')
+newDiv.setAttribute('id', 'sandbox-info')
+
+newDiv.innerHTML = `
+<img src="images/sandbox-qr.png" alt="" width="100px">
+`
+newDiv.style.display = "none";
+document.getElementsByClassName("contactContainer")[0].getElementsByClassName("col2")[0].appendChild(newDiv)
+
+checkb.addEventListener("click", () => {
+    console.log(newDiv);
+    if (checkb.checked == true) {
+        newDiv.style.display = "block";
+    } else {
+        newDiv.style.display = "none";
+    }
+
+    // http://wa.me/+14155238886?text=join%20direct-poetry
+})

@@ -484,7 +484,7 @@ h3 {
         height: 100vh;
         background-color: #F9F9F9;
         padding-top: 100px;
-        transition: 1s;
+        transition: 0.5s;
         text-align: center;
         padding: auto;
         z-index: 1;
