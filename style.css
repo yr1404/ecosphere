@@ -550,3 +550,11 @@ h3 {
     }
 
 }
+
+#sandbox-info {
+    display: none;
+
+    position: relative;
+    top: -500px;
+    background-color: #0087ca;
+}

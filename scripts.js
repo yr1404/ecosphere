@@ -129,14 +129,7 @@ document.addEventListener('mousemove', (e) => {
 // Displaying sandbox connection notification onclick of the checkbox
 
 const checkb = document.getElementById("wa-checkbox")
-var newDiv = document.createElement('div')
-newDiv.setAttribute('id', 'sandbox-info')
-
-newDiv.innerHTML = `
-<img src="images/sandbox-qr.png" alt="" width="100px">
-`
-newDiv.style.display = "none";
-document.getElementsByClassName("contactContainer")[0].getElementsByClassName("col2")[0].appendChild(newDiv)
+var newDiv = document.getElementById("sandbox-info")
 
 checkb.addEventListener("click", () => {
     console.log(newDiv);
