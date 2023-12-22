@@ -4,6 +4,9 @@ $email = $_POST['email'];
 $phone = $_POST['phone'];
 $message = $_POST['message'];
 
+$checkWA = $_POST['wa-message'];
+$checkEmail = $_POST['recv-email'];
+
 //Database connection 
 // $conn = new mysqli('sql12.freesqldatabase.com', 'sql12662934', 'CY2DyHwdab', 'sql12662934');
 // if ($conn->connect_error) {
@@ -23,41 +26,47 @@ require __DIR__ . '/twilio-php-main/src/Twilio/autoload.php'; // Include Twilio 
 
 use Twilio\Rest\Client;
 
-$accountSid = 'AC97c4672417c53b9a2fbf795ec993d65c';
-$authToken = '14712da20482a837bcf0cf76b2fe2544';
+if ($checkWA) {
 
-$client = new Client($accountSid, $authToken);
+    $accountSid = 'AC97c4672417c53b9a2fbf795ec993d65c';
+    $authToken = '14712da20482a837bcf0cf76b2fe2544';
 
-$recipientNumber = 'whatsapp:' . '+91' . $phone; // The recipient's WhatsApp number
-$businessNumber = 'whatsapp:+14155238886'; // Your WhatsApp Business Account number
+    $client = new Client($accountSid, $authToken);
 
-$text = "Name: $name\nEmail: $email\nPhone: $phone\nMessage: $message";
+    $recipientNumber = 'whatsapp:' . '+91' . $phone; // The recipient's WhatsApp number
+    $businessNumber = 'whatsapp:+14155238886'; // Your WhatsApp Business Account number
 
-try {
-    // Create a Twilio client
-    $twilio = new Client($accountSid, $authToken);
+    $text = "Name: $name\nEmail: $email\nPhone: $phone\nMessage: $message";
 
-    // Your Twilio API code here (e.g., sending an SMS)
-    $message = $twilio->messages
-        ->create(
-            $recipientNumber, // To phone number
-            [
-                'from' => $businessNumber,
-                'body' => 'Hello, this is a test message from EcoSphere!',
-            ]
-        );
 
-    // Check if the message was sent successfully
-    if ($message->status === 'sent') {
-        echo 'Message sent successfully. SID: ' . $message->sid . PHP_EOL;
-    } else {
-        echo 'Failed to send message. Channel Sandbox can only send messages to phone numbers that have joined the Sandbox';
+    try {
+        // Create a Twilio client
+        $twilio = new Client($accountSid, $authToken);
+
+        // Your Twilio API code here (e.g., sending an SMS)
+        $message = $twilio->messages
+            ->create(
+                $recipientNumber, // To phone number
+                [
+                    'from' => $businessNumber,
+                    'body' => 'Hello, this is a test message from EcoSphere!',
+                ]
+            );
+
+        // Check if the message was sent successfully
+        if ($message->status === 'sent') {
+            echo 'Message sent successfully. SID: ' . $message->sid . PHP_EOL;
+        } else {
+            echo 'Failed to send message. Channel Sandbox can only send messages to phone numbers that have joined the Sandbox';
+        }
+    } catch (Exception $e) {
+        // Handle exceptions
+        echo 'Error: ' . $e->getMessage() . PHP_EOL;
     }
-} catch (Exception $e) {
-    // Handle exceptions
-    echo 'Error: ' . $e->getMessage() . PHP_EOL;
-}
 
+} else {
+    echo "Not checked for recieving whatsapp message\n";
+}
 
 
 
@@ -65,39 +74,45 @@ try {
 
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: api-key
-$config = Brevo\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', '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');
+if ($checkEmail) {
 
-// Create an instance of the TransactionalEmailsApi
-$apiInstance = new Brevo\Client\Api\TransactionalEmailsApi(
-    new GuzzleHttp\Client(),
-    $config
-);
 
-// Create an instance of SendSmtpEmail
-$sendSmtpEmail = new \Brevo\Client\Model\SendSmtpEmail([
-    'to' => [
-        ['email' => $email, 'name' => $name]
-    ],
-    'templateId' => 1,
-    'params' => [
-        'name' => $name,
-        'email' => $email
-    ]
-]);
+    // Configure API key authorization: api-key
+    $config = Brevo\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', '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');
 
-try {
-    // Send the transactional email
-    $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
-    
-    // Present the result in a more readable format
-    echo nl2br("\nEmail sent successfully!\n");
-    echo "Message ID: " . $result->getMessageId() . "\n";
-    // echo "Message IDs: " . implode(', ', $result->getMessageIds()) . "\n";
-} catch (Exception $e) {
-    // Handle exceptions
-    echo 'Exception when calling TransactionalEmailsApi->sendTransacEmail: ', $e->getMessage(), PHP_EOL;
+    // Create an instance of the TransactionalEmailsApi
+    $apiInstance = new Brevo\Client\Api\TransactionalEmailsApi(
+        new GuzzleHttp\Client(),
+        $config
+    );
+
+    // Create an instance of SendSmtpEmail
+    $sendSmtpEmail = new \Brevo\Client\Model\SendSmtpEmail([
+        'to' => [
+            ['email' => $email, 'name' => $name]
+        ],
+        'templateId' => 1,
+        'params' => [
+            'name' => $name,
+            'email' => $email
+        ]
+    ]);
+
+    try {
+        // Send the transactional email
+        $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
+
+        // Present the result in a more readable format
+        echo nl2br("\nEmail sent successfully!\n");
+        echo "Message ID: " . $result->getMessageId() . "\n";
+        // echo "Message IDs: " . implode(', ', $result->getMessageIds()) . "\n";
+    } catch (Exception $e) {
+        // Handle exceptions
+        echo 'Exception when calling TransactionalEmailsApi->sendTransacEmail: ', $e->getMessage(), PHP_EOL;
+    }
+
+} else {
+    echo nl2br("\nNot checked for recieving email");
 }
-
 
 ?>

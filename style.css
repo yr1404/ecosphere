@@ -211,6 +211,7 @@ h3 {
 #contact-us {
     width: 100vw;
     background-color: #d8dfe5;
+    position: relative;
 }
 
 .contactContainer {
@@ -272,10 +273,11 @@ h3 {
 #checkbox {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
+    align-items: flex-start;
 }
 
-#wa-message, #recv-email {
+#wa-message,
+#recv-email {
     height: 50px;
     display: flex;
     align-items: center;
@@ -285,9 +287,10 @@ h3 {
 #wa-message div,
 #recv-email div {
     width: 30px;
-    height: 50px; 
+    height: 50px;
     padding-right: 10px;
-    flex-shrink: 0; /* To avoid shrinking with screen size*/
+    flex-shrink: 0;
+    /* To avoid shrinking with screen size*/
 }
 
 
@@ -383,6 +386,7 @@ h3 {
 }
 
 #contact-us .cursor {
+    z-index: 10;
     position: fixed;
     border-radius: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -393,7 +397,7 @@ h3 {
     height: 100px;
     width: 100px;
     transition: all 300ms ease-out;
-  }
+}
 
 
 @media screen and (max-height: 850px) {
@@ -553,8 +557,48 @@ h3 {
 
 #sandbox-info {
     display: none;
+    z-index: 5;
 
+    position: absolute;
+    bottom: 20vh;
+    left: 10vw;
+    width: 80vw;
+    height: fit-content;
+    background-color: #FFFFFF;
+    border: 1px black solid;
+    text-align: left;
+    padding: 2vh;
+    padding-bottom: 5vh;
+}
+
+#sandbox-info .row {
     position: relative;
-    top: -500px;
-    background-color: #0087ca;
+    height: 300px;
+    width: 90%;
+    left: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#sandbox-info .row .left-row,
+.right-row {
+    height: 100%;
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px black solid;
+}
+
+#sandbox-info .close {
+    position: absolute;
+    right: 20px;
+    background: url("images/cancel.png") no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }

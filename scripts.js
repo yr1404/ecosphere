@@ -131,8 +131,9 @@ document.addEventListener('mousemove', (e) => {
 const checkb = document.getElementById("wa-checkbox")
 var newDiv = document.getElementById("sandbox-info")
 
+
 checkb.addEventListener("click", () => {
-    console.log(newDiv);
+    
     if (checkb.checked == true) {
         newDiv.style.display = "block";
     } else {
@@ -141,3 +142,7 @@ checkb.addEventListener("click", () => {
 
     // http://wa.me/+14155238886?text=join%20direct-poetry
 })
+
+function closeDiv() {
+    newDiv.style.display = "none";
+}
