@@ -555,37 +555,48 @@ h3 {
 
 }
 
-#sandbox-info {
+#contact-us .container {
     display: none;
-    z-index: 5;
-
     position: absolute;
-    bottom: 20vh;
-    left: 10vw;
+    bottom: -100px;
+
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#sandbox-info {
+    z-index: 5;
     width: 80vw;
-    height: fit-content;
     background-color: #FFFFFF;
     border: 1px black solid;
+    padding-bottom: 5vh;
+    position: relative;
+
+    /* position: absolute;
+    left: 10vw;
+    height: fit-content;
     text-align: left;
     padding: 2vh;
-    padding-bottom: 5vh;
+    */
 }
 
 #sandbox-info .row {
-    position: relative;
-    height: 300px;
-    width: 90%;
-    left: 5%;
+    height: fit-content;
+    width: 100%;
+    /* padding-left: 5%; */
+    height: fit-content;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 #sandbox-info .row .left-row,
 .right-row {
-    height: 100%;
-    flex: 0.5;
+    flex-wrap: wrap;
+    width: 45%;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -595,10 +606,24 @@ h3 {
 
 #sandbox-info .close {
     position: absolute;
+    top: 20px;
     right: 20px;
     background: url("images/cancel.png") no-repeat;
     background-size: contain;
     width: 20px;
     height: 20px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1240px) {
+
+    #sandbox-info .row .left-row,
+    .right-row {
+        width: 90%;
+        height: fit-content;
+    }
+
+    #sandbox-info h2 {
+        padding-top: 20px;
+    }
 }

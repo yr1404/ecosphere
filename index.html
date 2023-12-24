@@ -265,50 +265,53 @@
 
     <section id="contact-us">
         <div class='cursor' id="cursor"></div>
-        <h1 class="t2">Get in Touch!</h2>
-            <p>If you have any questions or inquiries, please feel free to get in touch with us.</p>
-            <div class="contactContainer">
-                <div class="col1">
-                    <img src="images/get-in-touch.jpg" alt="Get In Touch">
-                </div>
-                <div class="col2">
-                    <form action="connect.php" method="post">
-                        <label for="name">Name: </label>
-                        <input type="text" id="name" name="name" required>
-
-                        <label for="email">Email: </label>
-                        <input type="email" id="email" name="email" required>
-
-                        <label for="phone">Phone: </label>
-                        <input type="tel" id="phone" name="phone">
-
-                        <label for="message">Message: </label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-
-                        <div id="checkbox">
-                            <div id="wa-message">
-                                <div><input type="checkbox" name="wa-message" id="wa-checkbox" /> </div>
-                                <label for="wa-message">Receive answers on WhatsApp (check if preferred)</label>
-                            </div>
-
-                            <div id="recv-email">
-                                <div><input type="checkbox" name="recv-email" /></div>
-                                <label for="recv-email">Receive Email</label>
-                            </div>
-                        </div>
-
-                        <div class="submit-button">
-                            <button type="submit" class="btn">Submit</button>
-                        </div>
-                    </form>
-                </div>
+        <h1 class="t2">Get in Touch!</h1>
+        <p>If you have any questions or inquiries, please feel free to get in touch with us.</p>
+        <div class="contactContainer">
+            <div class="col1">
+                <img src="images/get-in-touch.jpg" alt="Get In Touch">
             </div>
-            
+            <div class="col2">
+                <form action="connect.php" method="post">
+                    <label for="name">Name: </label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phone">Phone: </label>
+                    <input type="tel" id="phone" name="phone">
+
+                    <label for="message">Message: </label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <div id="checkbox">
+                        <div id="wa-message">
+                            <div><input type="checkbox" name="wa-message" id="wa-checkbox" /> </div>
+                            <label for="wa-message">Receive answers on WhatsApp (check if preferred)</label>
+                        </div>
+
+                        <div id="recv-email">
+                            <div><input type="checkbox" name="recv-email" /></div>
+                            <label for="recv-email">Receive Email</label>
+                        </div>
+                    </div>
+
+                    <div class="submit-button">
+                        <button type="submit" class="btn">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="container">
+
             <div id="sandbox-info">
                 <div class="close" onclick="closeDiv()"></div>
 
                 <h2>Connect to WhatsApp Sandbox</h2>
-                <p>To accept for recieving our test message via WhatsApp, connect to Twilio sandbox by sending a WhatsApp message from your device to the twilio number</p>
+                <p>To accept for recieving our test message via WhatsApp, connect to Twilio sandbox by sending a
+                    WhatsApp message from your device to the twilio number</p>
 
                 <div class="row">
 
@@ -317,18 +320,19 @@
                         <p>Use WhatsApp and send a message from your device to</p>
                         <span>+1 415 523 8886</span>
                         <p>with code <b>join direct-poetry</b></p>
-                        
+
                         <a href="http://wa.me/+14155238886?text=join%20direct-poetry">Send WhatsApp</a>
                     </div>
                     <div class="right-row">
                         <h3>Scan the qr code on mobile</h3>
-                        <img src="images/sandbox-qr.png" alt="" width="100px">
+                        <img src="images/sandbox-qr.png" alt="whatsapp qr" width="110px">
                         <p>Twilio WhatsApp Sandbox</p>
                     </div>
 
                 </div>
 
             </div>
+        </div>
     </section>
 
 

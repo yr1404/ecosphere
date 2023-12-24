@@ -126,16 +126,16 @@ document.addEventListener('mousemove', (e) => {
 })
 
 
-// Displaying sandbox connection notification onclick of the checkbox
+// Displaying sandbox connection pop up onclick of the checkbox
 
 const checkb = document.getElementById("wa-checkbox")
-var newDiv = document.getElementById("sandbox-info")
+var newDiv = document.getElementById("contact-us").getElementsByClassName("container")[0]
 
 
 checkb.addEventListener("click", () => {
     
     if (checkb.checked == true) {
-        newDiv.style.display = "block";
+        newDiv.style.display = "flex";
     } else {
         newDiv.style.display = "none";
     }
