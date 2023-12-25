@@ -558,16 +558,18 @@ h3 {
 #contact-us .container {
     display: none;
     position: absolute;
-    bottom: -100px;
+    bottom: -10px;
 
     width: 100%;
     height: 100vh;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 15;
 }
 
 #sandbox-info {
-    z-index: 5;
+    /* z-index: 5; */
     width: 80vw;
     background-color: #FFFFFF;
     border: 1px black solid;
@@ -616,6 +618,12 @@ h3 {
 }
 
 @media screen and (max-width: 1240px) {
+
+    #contact-us .container {
+        height: fit-content;
+        padding-top: 100px;
+    }
+
 
     #sandbox-info .row .left-row,
     .right-row {

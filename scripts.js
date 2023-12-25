@@ -133,9 +133,14 @@ var newDiv = document.getElementById("contact-us").getElementsByClassName("conta
 
 
 checkb.addEventListener("click", () => {
+
+    // Disable scrolling
+    // document.body.style.overflow = 'hidden';
     
     if (checkb.checked == true) {
+
         newDiv.style.display = "flex";
+        newDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
         newDiv.style.display = "none";
     }
