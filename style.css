@@ -1,10 +1,11 @@
 * {
-    list-style: none;
-    overflow-x: clip;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; 
+    /* 1. This property avoids the navbar to cover headlines when nav links are clicked  */
+
 }
 
 body {
+    list-style: none;
     text-align: center;
 }
 
@@ -27,7 +28,7 @@ section {
     z-index: 0;
     padding-top: 2em;
     scroll-margin-top: 9vh;
-    /* This property avoids the navbar to cover headlines when nav links are clicked  */
+    /* 2. This property avoids the navbar to cover headlines when nav links are clicked  */
 }
 
 #logo {
@@ -56,6 +57,7 @@ section {
 }
 
 .navbar ul {
+    list-style: none;
     display: flex;
 }
 
@@ -133,7 +135,7 @@ a {
 
 .t2 {
     display: inline;
-
+    
     font-family: 'Rubik', sans-serif;
     font-size: 30px;
     border-bottom: 3px solid blue;
@@ -209,7 +211,7 @@ h3 {
 }
 
 #contact-us {
-    width: 100vw;
+    width: 100%;
     background-color: #d8dfe5;
     position: relative;
 }
@@ -349,11 +351,14 @@ h3 {
     height: 40px;
 }
 
+
+#test{
+    overflow-x: hidden;
+}
 .testimonial-slider {
     display: flex;
     align-items: center;
     gap: 25px;
-    overflow-x: visible;
     scroll-behavior: smooth;
     transition: transform 0.5s ease-in-out;
 }
@@ -366,7 +371,6 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow: visible;
 }
 
 .review .rev-pfp img {
@@ -555,7 +559,7 @@ h3 {
 
 }
 
-#contact-us .container {
+#contact-us .wa-popup-container {
     display: none;
     position: absolute;
     bottom: -10px;
@@ -565,7 +569,6 @@ h3 {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.2);
-    z-index: 15;
 }
 
 #sandbox-info {
@@ -619,7 +622,7 @@ h3 {
 
 @media screen and (max-width: 1240px) {
 
-    #contact-us .container {
+    #contact-us .wa-popup-container {
         height: fit-content;
         padding-top: 100px;
     }

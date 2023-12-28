@@ -129,25 +129,27 @@ document.addEventListener('mousemove', (e) => {
 // Displaying sandbox connection pop up onclick of the checkbox
 
 const checkb = document.getElementById("wa-checkbox")
-var newDiv = document.getElementById("contact-us").getElementsByClassName("container")[0]
-
+var newDiv = document.getElementsByClassName("wa-popup-container")[0]
+const contactDiv = document.getElementById("contact-us")
+// const overlay = $('#contact-us')
+// overlay.scrollableOverlay()
 
 checkb.addEventListener("click", () => {
 
-    // Disable scrolling
-    // document.body.style.overflow = 'hidden';
-    
     if (checkb.checked == true) {
-
+        // contactDiv.style.overflowY = 'scroll';
+        document.body.style.overflowY = 'hidden'
         newDiv.style.display = "flex";
         newDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
         newDiv.style.display = "none";
     }
 
-    // http://wa.me/+14155238886?text=join%20direct-poetry
 })
 
+// http://wa.me/+14155238886?text=join%20direct-poetry
 function closeDiv() {
     newDiv.style.display = "none";
+    document.body.style.overflowY = 'scroll'
+    // contactDiv.style.overflow = 'scroll';
 }
