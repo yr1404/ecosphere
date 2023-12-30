@@ -620,13 +620,17 @@ h3 {
     cursor: pointer;
 }
 
+
 @media screen and (max-width: 1240px) {
-
+    
     #contact-us .wa-popup-container {
-        height: fit-content;
-        padding-top: 100px;
+        height: 100vh;
+        overflow: scroll;
     }
-
+    
+    #sandbox-info{
+        margin-top: 500px;
+    }
 
     #sandbox-info .row .left-row,
     .right-row {
