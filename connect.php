@@ -1,4 +1,12 @@
 <?php
+require_once __DIR__ . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+var_dump($_ENV['TWILIO_SID'], getenv('TWILIO_AUTH_TOKEN'));
+
+
 $name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
@@ -8,7 +16,7 @@ $checkWA = $_POST['wa-message'];
 $checkEmail = $_POST['recv-email'];
 
 //Database connection 
-// $conn = new mysqli('sql12.freesqldatabase.com', 'sql12662934', 'CY2DyHwdab', 'sql12662934');
+// $conn = new mysqli(/);
 // if ($conn->connect_error) {
 //     die('Connection Failed : ' . $conn->connect_error);
 // } else {
@@ -22,19 +30,20 @@ $checkEmail = $_POST['recv-email'];
 // }
 
 //Whatsapp message to customer
-require __DIR__ . '/twilio-php-main/src/Twilio/autoload.php'; // Include Twilio PHP SDK
-
 use Twilio\Rest\Client;
 
 if ($checkWA) {
 
-    $accountSid = 'AC97c4672417c53b9a2fbf795ec993d65c';
-    $authToken = '14712da20482a837bcf0cf76b2fe2544';
+    $accountSid = $_ENV['TWILIO_SID'];
+    $authToken = $_ENV['TWILIO_AUTH_TOKEN'];
 
+    if (!$accountSid || !$authToken) {
+        die("Environment variables not loaded. SID: " . var_export($accountSid, true) . ", Token: " . var_export($authToken, true));
+    }
     $client = new Client($accountSid, $authToken);
 
     $recipientNumber = 'whatsapp:' . '+91' . $phone; // The recipient's WhatsApp number
-    $businessNumber = 'whatsapp:+14155238886'; // Your WhatsApp Business Account number
+    $businessNumber = 'whatsapp:+14155238886';
 
     $text = "Name: $name\nEmail: $email\nPhone: $phone\nMessage: $message";
 
@@ -72,13 +81,11 @@ if ($checkWA) {
 
 //Email to customer
 
-require_once(__DIR__ . '/vendor/autoload.php');
-
 if ($checkEmail) {
 
 
     // Configure API key authorization: api-key
-    $config = Brevo\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', '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');
+    $config = Brevo\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'BREVO_API_KEY');
 
     // Create an instance of the TransactionalEmailsApi
     $apiInstance = new Brevo\Client\Api\TransactionalEmailsApi(
