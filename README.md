@@ -22,4 +22,5 @@ This repository contains the code for a basic website template with a responsive
 ### Website Link&nbsp; [![box-arrow-up-right](https://github.com/yr1404/website_with_navbar/assets/106465753/aef5ea09-8e41-4a57-a6a2-13fd0e8ecfde)](https://yr1404.github.io/ecosphere/)
 
 ### To be added
+- Host php
 - Enable storage of customer data in a database.
