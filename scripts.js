@@ -153,3 +153,29 @@ function closeDiv() {
     document.body.style.overflowY = 'scroll'
     // contactDiv.style.overflow = 'scroll';
 }
+
+// php fetch
+document.getElementById("git-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // Extract form data
+    const formData = new FormData(this);
+
+    // Send to first endpoint
+    fetch("connect.php", {
+        method: "POST",
+        body: formData,
+    })
+    .then(response => response.text())
+    .then(data => console.log("Response from connect.php:", data))
+    .catch(error => console.error("Error:", error));
+
+    // Send to second endpoint
+    fetch("https://es-php-db.rf.gd/db.php", {
+        method: "POST",
+        body: formData,
+    })
+    .then(response => response.text())
+    .then(data => console.log("Response from db.php:", data))
+    .catch(error => console.error("Error:", error));
+});

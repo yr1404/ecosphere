@@ -4,9 +4,6 @@ require_once __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-var_dump($_ENV['TWILIO_SID'], getenv('TWILIO_AUTH_TOKEN'));
-
-
 $name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
@@ -15,8 +12,22 @@ $message = $_POST['message'];
 $checkWA = $_POST['wa-message'];
 $checkEmail = $_POST['recv-email'];
 
+// to test
+// $name = "asd";
+// $email = "yr94310@gmail.com";
+// $phone = "123";
+// $message = "asd";
+
+// $checkWA = true;
+// $checkEmail = true;
+
 //Database connection 
-// $conn = new mysqli(/);
+// $dbHost = $_ENV['DB_HOSTNAME'];
+// $dbName = $_ENV['DB_NAME'];
+// $dbUser = $_ENV['DB_USERNAME'];
+// $dbPass = $_ENV['DB_PASSWORD'];
+
+// $conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
 // if ($conn->connect_error) {
 //     die('Connection Failed : ' . $conn->connect_error);
 // } else {
@@ -85,7 +96,7 @@ if ($checkEmail) {
 
 
     // Configure API key authorization: api-key
-    $config = Brevo\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'BREVO_API_KEY');
+    $config = Brevo\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', $_ENV['BREVO_API_KEY']);
 
     // Create an instance of the TransactionalEmailsApi
     $apiInstance = new Brevo\Client\Api\TransactionalEmailsApi(

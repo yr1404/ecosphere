@@ -17,7 +17,7 @@ This repository contains the code for a basic website template with a responsive
 - composer require twilio/sdk
 - sudo apt-get install php8.1-curl
 - composer require getbrevo/brevo-php
-- php -S localhost:8000
+- php -S localhost:8080
 
 ### Website Link&nbsp; [![box-arrow-up-right](https://github.com/yr1404/website_with_navbar/assets/106465753/aef5ea09-8e41-4a57-a6a2-13fd0e8ecfde)](https://yr1404.github.io/ecosphere/)
 
