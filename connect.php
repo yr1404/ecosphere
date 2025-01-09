@@ -1,4 +1,10 @@
 <?php
+
+// Headers to deal with CORS errors when hosting the PHP remotely
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
@@ -21,24 +27,23 @@ $checkEmail = $_POST['recv-email'];
 // $checkWA = true;
 // $checkEmail = true;
 
-//Database connection 
-// $dbHost = $_ENV['DB_HOSTNAME'];
-// $dbName = $_ENV['DB_NAME'];
-// $dbUser = $_ENV['DB_USERNAME'];
-// $dbPass = $_ENV['DB_PASSWORD'];
+//Database connection
+$dbHost = $_ENV["DB_HOST"];
+$dbName = $_ENV["DB_NAME"];
+$dbUser = $_ENV["DB_USERNAME"];
+$dbPass = $_ENV["DB_PASSWORD"];
 
-// $conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
-// if ($conn->connect_error) {
-//     die('Connection Failed : ' . $conn->connect_error);
-// } else {
-//     $stmt = $conn->prepare("insert into EcoSphere (name, email, phone, query) 
-//         values (?, ?, ?, ?)");
-//     $stmt->bind_param("ssis", $name, $email, $phone, $message);
-//     $stmt->execute();
-//     echo nl2br("Record added to database Successfully...\n");
-//     $stmt->close();
-//     $conn->close();
-// }
+$conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
+if ($conn->connect_error) {
+    die('Connection Failed : ' . $conn->connect_error);
+} else {
+    $stmt = $conn->prepare("INSERT INTO userqueries (Name, Email, Phone, Query) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssis", $name, $email, $phone, $message);
+    $stmt->execute();
+    echo nl2br("Record added to database Successfully...\n");
+    $stmt->close();
+    $conn->close();
+}
 
 //Whatsapp message to customer
 use Twilio\Rest\Client;
@@ -69,16 +74,16 @@ if ($checkWA) {
                 $recipientNumber, // To phone number
                 [
                     'from' => $businessNumber,
-                    'body' => 'Hello, this is a test message from EcoSphere!',
+                    'body' => 'Hello, this is a test message from EcoSphere!', // Modify this message as per need
                 ]
             );
 
-        // Check if the message was sent successfully
-        if ($message->status === 'sent') {
-            echo 'Message sent successfully. SID: ' . $message->sid . PHP_EOL;
-        } else {
-            echo 'Failed to send message. Channel Sandbox can only send messages to phone numbers that have joined the Sandbox';
-        }
+            // Check if the message was sent successfully
+            if ($message->status === 'sent') {
+                echo 'Message sent successfully. SID: ' . $message->sid . PHP_EOL;
+            } else {
+                echo 'Failed to send message. Channel Sandbox can only send messages to phone numbers that have joined the Sandbox';
+            }
     } catch (Exception $e) {
         // Handle exceptions
         echo 'Error: ' . $e->getMessage() . PHP_EOL;
